@@ -1,0 +1,314 @@
+body{
+    background-color: #e3e3e3;
+}
+.header{
+    height: 70px;
+    width: 100%;
+    background: #082729;
+    text-align: center;
+    font-size: 36px;
+    vertical-align: middle;
+    color: white;
+    line-height: 70px;
+}
+
+.menu {
+    display: inline-block;
+    position: relative
+}
+
+.main-list {
+    width: 100px;
+    height: calc( 100vh - 70px );
+    background-color: #56adc0;
+    display: inline-block;
+}
+.main-list ul{
+    padding-inline-start: 0;
+    margin: 0;
+    font-size: 24px;
+    list-style-type: none;    
+}
+
+.main-list li{
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+
+}
+
+.main-list li span{
+    display: block;
+    padding: 3px 0;
+}
+
+.main-list li img{
+    background-color: black;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+}
+
+.main-list li.active img{
+    background-color: white
+}
+.main-list li.active {
+    color: white;
+}
+
+.main-list li.active::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.menu .sub-lists{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: calc( 100vh - 70px);
+    min-width: 360px;
+    background-color: white;
+    box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.menu .sub-lists .submenu{
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.menu .sub-lists .submenu.active{
+    opacity: 1;
+    transition: all .3s ease-out;
+    z-index: 1;
+}
+.menu .sub-lists .submenu a{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    color: #56adc0;
+    text-decoration: underline;
+}
+
+.menu .sub-lists .submenu a::after{
+    margin-top: -5px;
+    content: '';
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+    border: solid #56adc0;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 5px;
+}
+.menu .menu-detail-wrapper{
+    min-width: 50vw;
+    position: absolute;
+    display: inline-block;
+    height: calc( 100vh - 70px );
+    background-color: white;
+    box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all .5s ease-out;
+    opacity: 0;
+    top:0;
+    left:-50vw;
+}
+.menu .menu-detail-wrapper.active{
+    left: 460px;
+    opacity: 1;
+    transition: all .5s ease-in;
+    z-index: 1;
+}
+.menu .menu-detail-wrapper .menu-detail{
+    position: relative;
+    padding: 20px;
+}
+
+.menu .menu-detail-wrapper .menu-detail .detail-menu{
+    display: none;
+}
+.menu .menu-detail-wrapper .menu-detail .detail-menu.active{
+    display: block;
+}
+
+.menu .menu-detail-wrapper .menu-detail .detail-menu li{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    line-height: 100px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    background-color:rgba(0, 0, 0, 0.1);
+    transition: all .1s ease-out;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.menu .menu-detail-wrapper .menu-detail .detail-menu li.rect{
+    height: 100px;
+    width: 200px;
+}
+.menu .menu-detail-wrapper .menu-detail .detail-menu li.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 50px 0 50px;
+}
+.menu .menu-detail-wrapper .menu-detail .detail-menu li.rounded{
+    height: 100px;
+    width: 200px;
+    border-radius: 50pc;
+}
+.menu .menu-detail-wrapper .menu-detail .detail-menu li.elipse{
+    border-radius: 50%;
+}
+
+.menu .menu-detail-wrapper .menu-detail .detail-menu li:hover{
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    transition: all .3s ease-out;
+    background: rgba(0, 0, 0, 0.2);
+}
+.menu .menu-detail-wrapper .menu-detail .detail-menu li span{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%)
+}
+
+#close-detail-menu{
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+
+#close-detail-menu::after{
+    content: 'X';
+    cursor: pointer;
+    padding: 5px;
+    color: #56adc0;
+    font-style: normal;
+    border-radius: 50%;
+    border: 1px solid #56adc0;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
+
+.stage-wrapper {
+    display: inline-block;
+    width: calc( 100vw - 460px );
+    height: calc( 100vh - 70px );
+    vertical-align: top;
+}
+
+.stage-wrapper .stage{
+    width: 100%;
+    height: 300px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.stage-wrapper .stage .shape-wrapper{
+    position: relative;
+    height: 200px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.stage-wrapper .stage .shape-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #e3e3e3 ;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    box-shadow: inset 2px 0 5px 1px rgba(0,0,0,0.3);
+}
+
+.stage-wrapper .stage #shape-field{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.stage .selected{
+    outline: 1px solid blue;
+}
+
+.stage-wrapper .stage #shape-field.circle{
+    border-radius: 50%;
+    width: 200px;
+}
+
+.stage-wrapper .stage #shape-field.rounded{
+    border-radius: 50px;
+}
+
+.stage-wrapper .stage #shape-field.elipse{
+    border-radius: 50%;
+}
+
+
+.stage-item-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.stage-item-wrapper > div{
+    padding: 5px 10px;
+}
+
+.stage-wrapper .stage .shape-wrapper .stage-text{
+    font-size: 24px; 
+    position: absolute;
+}
+
+.stage-wrapper .stage .shape-wrapper .stage-element{
+    position: absolute;
+    background-color: cyan ;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+}
+
+.stage-wrapper .stage .shape-wrapper .stage-element.elipse{
+    border-radius: 50%;
+    width: 100px;
+}
+
+.stage-wrapper .stage .shape-wrapper .stage-element.circle{
+    border-radius: 50%;
+}
+.stage-wrapper .stage .shape-wrapper .stage-element.rect{
+    width: 100px;
+}
+
+
+
+
+
+
+
+
+

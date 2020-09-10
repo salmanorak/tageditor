@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css"></link>
+    <link rel="stylesheet" href="css/style.css"></link>
+    <title>Tag Editor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            Header
+        </div>
+        <div class="menu">
+            <div class="main-list">
+                <ul class="list">
+                    <li id="product" class="list-item active">
+                        <img src="./img/icon-product.svg"></img>
+                        <span>Product</span>
+                    </li>
+                    <li id="label" class="list-item">
+                        <img src="./img/icon-label.svg" ></img>
+                        <span>Label</span>
+                    </li>
+                    <li id="visual" class="list-item">
+                        <img src="./img/icon-color.svg"></img>
+                        <span>Color</span>
+                    </li>
+                    <li id="text" class="list-item">
+                        <img src="./img/icon-text.svg"></img>
+                        <span>Text</span>
+                    </li>
+                    <li id="symbol" class="list-item">
+                            <img src="./img/icon-symbol.svg"></img>
+                        <span>Symbol</span>
+                    </li>
+                    <li id="frame" class="list-item">
+                            <img src="./img/icon-frame.svg"></img>
+                        <span>Frame</span>
+                    </li>
+                    <li id="quantity" class="list-item">
+                            <img src="./img/icon-extras.svg"></img>
+                        <span>Quantity</span>
+                    </li>
+                </ul>
+            </div><div 
+            class="menu-detail-wrapper">
+            <div class="menu-detail">
+                <div id="detail-element" class="detail-menu">
+                    <h3> Select element to add</h3>
+                    <ul class="element-list">
+                        <li data-type="rect" class="rect element-item">
+                            <span>Rectangle</span>
+                        </li>
+                        <li data-type="circle" class="circle element-item">
+                            <span>Circle</span>
+                        </li>
+                        <li data-type="elipse" class="elipse element-item">
+                            <span>Elipse</span>
+                        </li>
+                    </ul>                   
+                </div>
+                <div id="detail-shape" class="detail-menu">
+                    <h3> Select the shape</h3>
+                    <ul class="shape-list">
+                        <li data-type="rect" class="rect shape-item">
+                            <span>Rectangle</span>
+                        </li>
+                        <li data-type="circle" class="circle shape-item">
+                            <span>Circle</span>
+                        </li>
+                        <li data-type="rounded" class="rounded shape-item">
+                            <span>Rounded</span>
+                        </li>
+                        <li data-type="elipse" class="elipse shape-item">
+                            <span>Elipse</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-menu" id="detail-color">
+
+                </div>
+                <em id="close-detail-menu" title="Close" class="close" onclick="closeDetailMenu()"></em>
+            </div>
+        </div><div 
+                class="sub-lists">
+                <div id="product" class="submenu active">
+                    <a id="shape">Select Shape</a>
+                </div>
+                <div id="label" class="submenu">
+                    <a id="element">
+                        Add Element
+                    </a>
+                </div>
+                <div id="visual" class="submenu">
+                    <a id="color">Change Color</a>
+                </div>
+                <div id="text" class="submenu no-detail">
+                    <div class="textfield">
+                        <label for="text1"> Add Text To Field 1 </label>
+                        <input type="text" id="text1" name="text1" class="text-detail-input">
+                    </div>
+                    <div class="textfield">
+                        <label for="text2"> Add Text To Field 1 </label>
+                        <input type="text" id="text2" name="text2" class="text-detail-input">
+                    </div>
+                </div>
+            </div>
+        </div><div 
+            class="stage-wrapper">
+            <div class="stage">
+                <div class="shape-wrapper">
+                    <div id="shape-field" class="rect"></div>
+                    <div class="stage-element-wrapper">
+                        <div id="element-field" class="element"></div>
+                        <div id="text-field" class="text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="js/main.js" ></script>
+</body>
+</html>
